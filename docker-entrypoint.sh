@@ -13,10 +13,9 @@ fi
 echo "Checking if $MONITOR_CONFIG_FOLDER has contents..."
 if [ ! "$(ls -A $MONITOR_CONFIG_FOLDER)" ]; then
         echo "Copying default config..."
-        touch "$MONITOR_CONFIG_FOLDER/monitors.ini"
-        cp "$DEFAULT_CONFIG_FILE" "$MONITOR_CONFIG_FILE"
+        cp -r "$DEFAULT_CONFIG_FOLDER/." "$MONITOR_CONFIG_FOLDER/"
         chown -R $MONITOR_USER:$MONITOR_USER "$MONITOR_CONFIG_FOLDER/."
-        echo "$MONITOR_CONFIG_FOLDER/monitors.ini is empty. Create your monitors in here and check your settings in global.ini as well."
+        echo "Created $MONITOR_CONFIG_FOLDER/monitors.ini and global.ini. Check your settings!"
 fi
 
 # start supervisor
