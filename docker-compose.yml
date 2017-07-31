@@ -1,0 +1,18 @@
+version: '3.2'
+services:
+  simplemonitor:
+    restart: always
+    # use simplemonitor:alpine for an alpine image
+    image: braindoctor/simplemonitor:latest
+    container_name: simplemonitor
+    hostname: simplemonitor.domain.local
+    volumes:
+      - /tmp/simplemonitor/config:/etc/simplemonitor
+      # uncomment the following line if you want to customize the file in html folder
+#      - /tmp/simplemonitor/html:/usr/local/simplemonitor/html
+     # If you have the famous jwilder/nginx-proxy in front of this image, uncomment and modify the hostname.
+#    environment:
+#      - VIRTUAL_HOST=monitor.domain.local
+    ports:
+      # If you have the famous jwilder/nginx-proxy in front of this image, remove the 8080 port as it's not needed anymore
+      - "8080:8080"
