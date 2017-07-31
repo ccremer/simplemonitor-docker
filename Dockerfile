@@ -18,6 +18,7 @@ RUN \
 	apt-get install --no-install-recommends -y \
 		supervisor \
 		nginx \
+		dnsutils \
 	&& apt-get clean && \
 	git clone $GIT_URL /tmp/simplemonitor && \
 	rm -r /tmp/simplemonitor/.git && \
