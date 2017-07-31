@@ -2,8 +2,8 @@ version: '3.2'
 services:
   simplemonitor:
     restart: always
-    # use simplemonitor:alpine for an alpine image
-    image: braindoctor/simplemonitor:latest
+    # use simplemonitor-docker:alpine for an alpine image
+    image: braindoctor/simplemonitor-docker:latest
     container_name: simplemonitor
     hostname: simplemonitor.domain.local
     volumes:
