@@ -17,6 +17,7 @@ RUN \
 	apk add --no-cache \
 		supervisor \
 		nginx \
+		nginx-mod-http-echo \
 		git \
 		bind-tools \
 	&& git clone $GIT_URL /tmp/simplemonitor && \
