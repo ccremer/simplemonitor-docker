@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 
 # check if html is empty. If not, copy from default and chown

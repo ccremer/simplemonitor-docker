@@ -99,3 +99,10 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+
+# pycharm
+.idea/misc.xml
+.idea/workspace.xml
+.idea/markdown-navigator*
+.idea/preferred-vcs.xml

@@ -6,7 +6,7 @@ Give [jamesoff/simplemonitor](https://github.com/jamesoff/simplemonitor) a Star!
 
 # About this Docker image
 
-This docker image installs SimpleMonitor on Debian Stretch or Alpine and includes a nginx Webserver, where you can get the status of your hosts and services.
+This docker image installs SimpleMonitor on Alpine and includes a nginx webserver, where you can get the status of your hosts and services.
 
 ## Run it
 
@@ -16,13 +16,11 @@ version: '3.2'
 services:
   simplemonitor:
     restart: always
-    # use simplemonitor-docker:alpine for an alpine image
     image: braindoctor/simplemonitor-docker:latest
     container_name: simplemonitor
     hostname: simplemonitor.domain.local
     volumes:
-      - /tmp/simplemonitor/config:/etc/simplemonitor
-      - /tmp/simplemonitor/html:/usr/local/simplemonitor/html
+      - /tmp/simplemonitor:/etc/simplemonitor
     ports:
       - "8080:8080"
 ```
@@ -51,10 +49,11 @@ You should now be able to point your browser to `http://simplemonitor:8080` and 
 ## Configure it
 
 1. First make sure that the volume paths to your docker-compose.yml are correct to make them persistent
-2. Bring up the container by running `docker-compose up -d`. The default configuration is being copied to the locations above.
+2. Bring up the container by running `docker-compose up -d`. The default configuration is being copied to the location above.
 3. Stop the container by running `docker-compose stop`.
-4. Modify `/path//to/your/simplemonitor/config/global.ini` as appropriate. See http://jamesoff.github.io/simplemonitor/configuration.html for reference.
-5. Configure your services `/path//to/your/simplemonitor/config/monitors.ini`. See http://jamesoff.github.io/simplemonitor/monitors.html for reference.
+4. Modify `/path/to/your/simplemonitor/global.ini` as appropriate. See http://jamesoff.github.io/simplemonitor/configuration.html for reference.
+5. Configure your services `/path/to/your/simplemonitor/monitors.ini`. See http://jamesoff.github.io/simplemonitor/monitors.html for reference.
+6. Start the container again by running `docker-compose start`
 
 # SSL Support
 
