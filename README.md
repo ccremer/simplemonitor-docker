@@ -1,10 +1,12 @@
-# About SimpleMonitor
+# DEPRECATED: I am not maintaining this anymore, there is an official image
+
+## About SimpleMonitor
 
 [SimpleMonitor](http://jamesoff.github.io/simplemonitor/) by James Seward is a Python script which monitors hosts and network connectivity. It is designed to be quick and easy to set up and lacks complex features that can make things like Nagios, OpenNMS and Zenoss overkill for a small business or home network. Remote monitor instances can send their results back to a central location.
 
 Give [jamesoff/simplemonitor](https://github.com/jamesoff/simplemonitor) a Star!
 
-# About this Docker image
+## About this Docker image
 
 This docker image installs SimpleMonitor on Alpine and includes a nginx webserver, where you can get the status of your hosts and services.
 
